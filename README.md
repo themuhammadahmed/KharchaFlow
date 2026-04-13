@@ -2,7 +2,7 @@
 Simple Login Screen for KharchaFlow - Expense Tracker App | Built with Jetpack Compose
 # KharchaFlow - Expense Tracker 💰
 
-**My Internship Project** | Built with Jetpack Compose
+Built with Jetpack Compose
 
 **"Your expenses, your control"**
 
