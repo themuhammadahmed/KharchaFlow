@@ -1,0 +1,148 @@
+package com.example.myapplication.jetpackcompose
+
+import android.R
+import androidx.compose.foundation.background
+import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.material3.Button
+import androidx.compose.material3.ButtonDefaults
+import androidx.compose.material3.Icon
+import androidx.compose.material3.OutlinedTextField
+import androidx.compose.material3.Text
+import androidx.compose.runtime.*
+import androidx.compose.ui.Alignment
+import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.Shape
+import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.text.font.FontFamily
+import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
+
+@Preview
+@Composable
+fun LoginPage() {
+    var inputText by remember { mutableStateOf("") }
+
+    Column {
+        Box(
+            modifier = Modifier
+                .fillMaxWidth()
+                .background(Color(0xFFD05E6D))
+                .height(300.dp)
+                .padding(25.dp),
+            contentAlignment = Alignment.Center
+        ) {
+            Column(
+                horizontalAlignment = Alignment.CenterHorizontally
+            ) {
+                Text(
+                    text = "Welcome to KharchaFlow",
+                    fontSize = 25.sp,
+                    fontWeight = FontWeight.ExtraBold,
+                    fontFamily = FontFamily.Serif,
+                    color = Color.White
+                )
+                Spacer(modifier = Modifier.height(8.dp))
+                Text(
+                    text = "your expense, your control",
+                    fontSize = 18.sp,
+                    fontWeight = FontWeight.Medium,
+                    fontFamily = FontFamily.Serif,
+                    color = Color.White
+                )
+                Spacer(modifier = Modifier.height(30.dp))
+                Text(text = "--------------------------", color = Color.White)
+                Spacer(modifier = Modifier.height(30.dp))
+                Text(
+                    text = "Log in to your account",
+                    fontSize = 20.sp,
+                    color = Color.White,
+                    fontWeight = FontWeight.Bold
+                )
+            }
+        }
+
+        Box(
+            modifier = Modifier
+                .fillMaxWidth()
+                .background(Color(0xFF880E4F))
+                .padding(3.dp)
+        )
+        Box(
+            modifier = Modifier
+                .fillMaxWidth()
+                .background(Color(0xFFFFFF00))
+                .padding(3.dp)
+        )
+
+        Column(
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(30.dp)
+        ) {
+            Text(
+                text = "Phone or Email:",
+                fontSize = 20.sp,
+                fontWeight = FontWeight.Bold
+            )
+            Spacer(modifier = Modifier.height(10.dp))
+            OutlinedTextField(
+                value = inputText,
+                onValueChange = { inputText = it },
+                placeholder = { Text(text = "Enter your phone or Email") },
+                modifier = Modifier.fillMaxWidth()
+            )
+            Spacer(modifier = Modifier.height(20.dp))
+            Text(
+                text = "Password:",
+                fontSize = 20.sp,
+                fontWeight = FontWeight.Bold
+            )
+            Spacer(modifier = Modifier.height(10.dp))
+            OutlinedTextField(
+                value = inputText,
+                onValueChange = { inputText = it },
+                placeholder = { Text(text = "Enter your password") },
+                modifier = Modifier.fillMaxWidth()
+            )
+            Spacer(modifier = Modifier.height(5.dp))
+            Row(
+                 modifier = Modifier.fillMaxWidth()
+                .padding(horizontal = 20.dp)
+            ) {
+                Text(
+                    text = "Forgot Password?",
+                    color = Color(0xFFD05E6D)
+                )
+            }
+        }
+        Button(
+            onClick = { },
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(14.dp)
+                .height(60.dp),
+            shape = RoundedCornerShape(16.dp),
+            colors = ButtonDefaults.buttonColors(
+                containerColor = Color(0xFFD05E6D)
+            )
+        ) {
+            Text(text = "Log In",
+                fontWeight = FontWeight.Bold,
+                fontSize = 20.sp
+                )
+        }
+        Row(
+            modifier = Modifier.fillMaxWidth(),
+            horizontalArrangement = Arrangement.Center
+        ){
+            Text(text = "Don't have an account? Sign up")
+        }
+
+
+    }
+}
